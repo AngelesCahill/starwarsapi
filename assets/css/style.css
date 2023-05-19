@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.indice {
+    border-right: 1px solid grey;
+    height: 100%;
+    padding-right: 1rem;
+    text-align: right;
+    align-items: center;
+}
+.rangoIndice {
+    border-radius: 50px;
+    height: 3rem;
+    width: 3rem;
+    background-color: aquamarine;
+    margin-right: 0.3rem;
+}
+.columna1 {
+    height: 100%;
+    background-color: white;
+    border: 1px solid grey;
+}
+.card-title {
+    font-size: 0.8rem;
+}
+.card-text {
+    font-size: 0.7rem;
+}
