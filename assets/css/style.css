@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
 .indice {
-    border-right: 1px solid grey;
     height: 100%;
-    padding-right: 1rem;
+    padding-right: 3rem;
     text-align: right;
     align-items: center;
 }
@@ -13,8 +13,30 @@
     border-radius: 50px;
     height: 3rem;
     width: 3rem;
-    background-color: aquamarine;
-    margin-right: 0.3rem;
+    background-color: rgb(69, 85, 108);
+    margin-right: 0.5rem;
+    color: aliceblue;
+}
+.a {
+    display: inline-block;
+}
+.circle1 {
+    border-radius: 50px;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgb(238, 71, 102);
+}
+.circle2 {
+    border-radius: 50px;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgb(82, 233, 92);
+}
+.circle3 {
+    border-radius: 50px;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgb(98, 205, 244);
 }
 .columna1 {
     height: 100%;
