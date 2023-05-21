@@ -2,6 +2,21 @@
     margin: 0;
     padding: 0;
 }
+.titulo {
+    background-image: url("./img/fondo.jpg");
+    height: 6rem;
+    text-align: center;
+    color: rgb(255, 242, 0);
+    opacity: 0.9;
+}
+.texto {
+    padding-top: 2rem;
+    color: ghostwhite;
+}
+.cont {
+    background-image: url("./img/darth.jpg");
+    
+}
 .logo {
     height: 4rem;
     width: 6rem;
@@ -51,4 +66,21 @@
 }
 .card-text {
     font-size: 0.7rem;
+}
+#imgGraph1 {
+    width: 20rem;
+    height: 10rem;
+}
+#imgGraph2 {
+    width: 20rem;
+    height: 10rem;
+}
+#imgGraph3 {
+    width: 20rem;
+    height: 10rem;
+}
+.contGraf {
+    border: 1px solid ghostwhite;
+    color: ghostwhite;
+    text-align: center;
 }

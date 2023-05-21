@@ -1,10 +1,14 @@
 const URL_BASE = "https://swapi.dev/api/people";
+const URL_BASE2 = "https://swapi.dev/api/people/?page=2";
 let datos1;
 let datos2;
 let datos3;
 let group1 = [];
 let group2 = [];
 let group3 = [];
+let group4 = [];
+let group5 = [];
+let group6 = [];
 let notGo = false;
 let notGo2 = false;
 let notGo3 = false;
@@ -14,14 +18,123 @@ let filas3 = document.getElementById("filas3");
 let rango1 = document.getElementById("rango1");
 let rango2 = document.getElementById("rango2");
 let rango3 = document.getElementById("rango3");
-
+let estaturas = document.getElementById("estaturas")
+let myChart = document.getElementById('myChart');
+let imgGraph = document.getElementById('imgGraph');
   
-  async function getApi(url) {
-    const response = await fetch(url);
-    const res = await response.json();
-    return res;
+async function getApi(url) {
+  const response = await fetch(url);
+  const res = await response.json();
+  return res;
+};
+
+
+function graph1() {
+  const ctx = document.getElementById("myChart");
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: group1,
+            datasets: [
+              {
+                label: "Estatura",
+                data: group2,
+                borderWidth: 1,
+                backgroundColor: "#F79C09",
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+};
+async function paintGraph1() {
+    for (let i = 0; i < 5; i++) {
+      let person = await getApi(URL_BASE);
+      let personaje = person.results;
+      console.log(personaje)
+      let names = group1.push(personaje[i].name);
+      let heights = group2.push(personaje[i].height);
+      graph1();
+    }
 }
   
+function graph2() {
+  const ctx = document.getElementById("myChart");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: group3,
+      datasets: [
+        {
+          label: "Estatura",
+          data: group4,
+          borderWidth: 1,
+          backgroundColor: "#F79C09",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+async function paintGraph2() {
+  for (let i = 5; i < 10; i++) {
+    let person = await getApi(URL_BASE);
+    let personaje = person.results;
+    console.log(personaje);
+    let names = group3.push(personaje[i].name);
+    let heights = group4.push(personaje[i].height);
+    graph2();
+  }
+}
+
+function graph3() {
+  const ctx = document.getElementById("myChart");
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: group5,
+      datasets: [
+        {
+          label: "Estatura",
+          data: group6,
+          borderWidth: 1,
+          backgroundColor: "#F79C09",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+async function paintGraph3() {
+  for (let i = 0; i < 5; i++) {
+    let person = await getApi(URL_BASE2);
+    let personaje = person.results;
+    console.log(personaje);
+    let names = group5.push(personaje[i].name);
+    let heights = group6.push(personaje[i].height);
+    graph3();
+  }
+}
+
+
 function paintCard(character, fila) {
     fila.innerHTML += ` 
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -122,5 +235,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   gen3 = tarjetaGenerador3();
   rango3.addEventListener("mouseover", revelaPersonaje3);
 
+  imgGraph1.addEventListener("click", paintGraph1);
+  imgGraph2.addEventListener("click", paintGraph2);
+  imgGraph3.addEventListener("click", paintGraph3);
 
 });
