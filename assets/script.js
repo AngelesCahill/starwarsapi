@@ -135,14 +135,17 @@ async function paintGraph3() {
 }
 
 
-function paintCard(character, fila) {
+function paintCard(character, fila, clase) {
     fila.innerHTML += ` 
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
         <div id="tarjSola" class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-8">
               <div class="card-body">
+                <span class="a"><div class=${ clase }></div></span>
+                <span class="a">
                 <h5 class="card-title">${character.name}"</h5>
+                </span>
                 <p class="card-text">Estatura: "${character.height}"</p>
                 <p class="card-text">Peso: "${character.mass}"</p>
               </div>
@@ -158,7 +161,7 @@ function paintCard(character, fila) {
     filas1.innerHTML = "";
     for (let i = 1; i <= 5; i++) {
       let personaje = await getApi(URL_BASE + '/' + i);
-      paintCard(personaje, filas1);
+      paintCard(personaje, filas1, "circle1");
       yield personaje.name;
     }
   }
@@ -181,7 +184,7 @@ function paintCard(character, fila) {
       filas2.innerHTML = "";
       for (let i = 6; i <= 10; i++) {
         let personaje = await getApi(URL_BASE + "/" + i);
-        paintCard(personaje, filas2);
+        paintCard(personaje, filas2, "circle2");
         yield personaje.name;
       }
     }
@@ -205,7 +208,7 @@ function paintCard(character, fila) {
       filas3.innerHTML = "";
       for (let i = 11; i <= 15; i++) {
         let personaje = await getApi(URL_BASE + "/" + i);
-        paintCard(personaje, filas3);
+        paintCard(personaje, filas3, "circle3");
         yield personaje.name;
       }
     }

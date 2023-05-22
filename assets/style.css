@@ -4,10 +4,11 @@
 }
 .titulo {
     background-image: url("./img/fondo.jpg");
+    background-repeat: repeat;
     height: 6rem;
     text-align: center;
     color: rgb(255, 242, 0);
-    opacity: 0.9;
+    padding-top: 2rem;
 }
 .texto {
     padding-top: 2rem;
